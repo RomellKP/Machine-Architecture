@@ -1,0 +1,46 @@
+{
+    // Checks that bit 2 of the status port is checked to
+    // see if other internal errors have occurred.
+    THERMO_SENSOR_PORT  = (230+450)*32 + 1;
+    THERMO_STATUS_PORT  = 0b00000100; // celsius
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 1
+THERMO_SENSOR_PORT  : 21761
+THERMO_STATUS_PORT  : 0000 0100
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 00 0110111 1011111 1011111 0000000
+index               : 30 28      21      14       7       0
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      
+{
+    // Checks that bit 2 of the status port is checked to
+    // see if other internal errors have occurred.
+    THERMO_SENSOR_PORT  = (-123+450)*32 + 1;
+    THERMO_STATUS_PORT  = 0b11100100; // fahrenheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 1
+THERMO_SENSOR_PORT  : 10465
+THERMO_STATUS_PORT  : 1110 0100
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 00 0110111 1011111 1011111 0000000
+index               : 30 28      21      14       7       0
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      

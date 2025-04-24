@@ -1,0 +1,21 @@
+{
+    // Tests whether sensor value of leads to 32 deg F.
+    THERMO_SENSOR_PORT  = 14400;
+    THERMO_STATUS_PORT  = 0b00100000; // bit 5 is 1, Fahreheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    print_ports();
+}
+TEST OUTPUT:
+ret: 0
+temp = {
+  .tenths_degrees = 320,
+  .temp_mode      = 2,
+}
+THERMO_SENSOR_PORT  : 14400
+THERMO_STATUS_PORT  : 0010 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0

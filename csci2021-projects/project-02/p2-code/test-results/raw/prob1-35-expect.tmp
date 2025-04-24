@@ -1,0 +1,31 @@
+THERMO_SENSOR_PORT set to: -600
+THERMO_STAUS_PORT set to: 1010 1000
+index:                       4    0
+result = set_temp_from_ports(&temp);
+result: 1
+WARNING: Non-zero value returned
+temp = {
+  .tenths_degrees = 0
+  .temp_mode      = 3
+}
+Simulated temp is: 0.0 ERROR
+result = set_display_from_temp(temp, &display);
+result: 1
+WARNING: Non-zero value returned
+display is
+bits:  00 00 0110111 1011111 1011111 0000000
+index: 30 28      21      14       7       0
+
+result = thermo_update();
+result: 1
+WARNING: Non-zero value returned
+THERMO_DISPLAY_PORT is
+bits:  00 00 0110111 1011111 1011111 0000000
+index: 30 28      21      14       7       0
+
+Thermometer Display:
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      

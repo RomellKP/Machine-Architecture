@@ -1,0 +1,15 @@
+==2100752== Memcheck, a memory error detector
+==2100752== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2100752== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2100752== Command: ./test_thermo_update set_display_from_temp()\ 456\ F
+==2100752== Parent PID: 2100751
+==2100752== 
+==2100752== 
+==2100752== HEAP SUMMARY:
+==2100752==     in use at exit: 0 bytes in 0 blocks
+==2100752==   total heap usage: 2 allocs, 2 frees, 8 bytes allocated
+==2100752== 
+==2100752== All heap blocks were freed -- no leaks are possible
+==2100752== 
+==2100752== For lists of detected and suppressed errors, rerun with: -s
+==2100752== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

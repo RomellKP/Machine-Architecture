@@ -1,0 +1,28 @@
+THERMO_SENSOR_PORT set to: 3430
+THERMO_STAUS_PORT set to: 1010 1000
+index:                       4    0
+result = set_temp_from_ports(&temp);
+result: 0
+temp = {
+  .tenths_degrees = -297
+  .temp_mode      = 2
+}
+Simulated temp is: -29.7 deg C
+result = set_display_from_temp(temp, &display);
+result: 0
+display is
+bits:  00 10 0000100 0111101 1101111 1001001
+index: 30 28      21      14       7       0
+
+result = thermo_update();
+result: 0
+THERMO_DISPLAY_PORT is
+bits:  00 10 0000100 0111101 1101111 1001001
+index: 30 28      21      14       7       0
+
+Thermometer Display:
+      ~~   ~~   ~~   
+        | |  |    |  
+ ~~   ~~   ~~       o
+     |       |    |  F
+      ~~   ~~ o      

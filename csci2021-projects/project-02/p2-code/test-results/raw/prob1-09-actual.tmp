@@ -1,0 +1,46 @@
+{
+    // Tests whether bit 2 of the status port is checked;
+    // when 1 the thermometer is erroring and temp_mode
+    // should be set to 3.
+    THERMO_SENSOR_PORT  = 600;
+    THERMO_STATUS_PORT  = 0b10100100; // fahreheit+error
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    print_ports();
+}
+TEST OUTPUT:
+ret: 1
+temp = {
+  .tenths_degrees = 0,
+  .temp_mode      = 3,
+}
+THERMO_SENSOR_PORT  : 600
+THERMO_STATUS_PORT  : 1010 0100
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0
+{
+    // Tests whether bit 2 of the status port is checked;
+    // when 1 the thermometer is erroring and temp_mode
+    // should be set to 3.
+    THERMO_SENSOR_PORT  = 600;
+    THERMO_STATUS_PORT  = 0b01000101; // celsius+error
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    print_ports();
+}
+TEST OUTPUT:
+ret: 1
+temp = {
+  .tenths_degrees = 0,
+  .temp_mode      = 3,
+}
+THERMO_SENSOR_PORT  : 600
+THERMO_STATUS_PORT  : 0100 0101
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0

@@ -1,0 +1,74 @@
+{
+    // Calls set_temp() and set_display() in sequence
+    THERMO_SENSOR_PORT  = -128;
+    THERMO_STATUS_PORT  = 0b11101000; // fahrenheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    ret = set_display_from_temp(*temp, dispint);
+    printf("ret: %d\n",ret);
+    printf("%-19s : %s\n", "dispint",bitstr(*dispint,&dispspec));
+    printf("%-19s : %s\n", "index",bitstr_index(&dispspec));
+    print_ports();
+    printf("SIMULATED DISPLAY:\n");
+    THERMO_DISPLAY_PORT = *dispint;
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 1
+temp = {
+  .tenths_degrees = 0,
+  .temp_mode      = 3,
+}
+ret: 1
+dispint             : 00 00 0110111 1011111 1011111 0000000
+index               : 30 28      21      14       7       0
+THERMO_SENSOR_PORT  : -128
+THERMO_STATUS_PORT  : 1110 1000
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0
+SIMULATED DISPLAY:
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      
+{
+    // Calls set_temp() and set_display() in sequence
+    THERMO_SENSOR_PORT  = 900*32+1;
+    THERMO_STATUS_PORT  = 0b11000100; // celsius+error
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    ret = set_display_from_temp(*temp, dispint);
+    printf("ret: %d\n",ret);
+    printf("%-19s : %s\n", "dispint",bitstr(*dispint,&dispspec));
+    printf("%-19s : %s\n", "index",bitstr_index(&dispspec));
+    print_ports();
+    printf("SIMULATED DISPLAY:\n");
+    THERMO_DISPLAY_PORT = *dispint;
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 1
+temp = {
+  .tenths_degrees = 0,
+  .temp_mode      = 3,
+}
+ret: 1
+dispint             : 00 00 0110111 1011111 1011111 0000000
+index               : 30 28      21      14       7       0
+THERMO_SENSOR_PORT  : 28801
+THERMO_STATUS_PORT  : 1100 0100
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0
+SIMULATED DISPLAY:
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      

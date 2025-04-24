@@ -1,0 +1,15 @@
+==2102027== Memcheck, a memory error detector
+==2102027== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2102027== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2102027== Command: ./thermo_main 15333 C
+==2102027== Parent PID: 2102026
+==2102027== 
+==2102027== 
+==2102027== HEAP SUMMARY:
+==2102027==     in use at exit: 0 bytes in 0 blocks
+==2102027==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==2102027== 
+==2102027== All heap blocks were freed -- no leaks are possible
+==2102027== 
+==2102027== For lists of detected and suppressed errors, rerun with: -s
+==2102027== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

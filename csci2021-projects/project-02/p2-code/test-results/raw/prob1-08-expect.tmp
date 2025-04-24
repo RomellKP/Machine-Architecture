@@ -1,0 +1,43 @@
+{
+    // Tests whether out of range sensor is correctly detected
+    THERMO_SENSOR_PORT  = -200;
+    THERMO_STATUS_PORT  = 0b00000000; // celsius
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    print_ports();
+}
+TEST OUTPUT:
+ret: 1
+temp = {
+  .tenths_degrees = 0,
+  .temp_mode      = 3,
+}
+THERMO_SENSOR_PORT  : -200
+THERMO_STATUS_PORT  : 0000 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0
+{
+    // Tests whether out of range sensor is correctly
+    // detected and temp_status is set to 3 for error.
+    THERMO_SENSOR_PORT  = 28805;
+    THERMO_STATUS_PORT  = 0b00100000; // fahreheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+    print_ports();
+}
+TEST OUTPUT:
+ret: 1
+temp = {
+  .tenths_degrees = 0,
+  .temp_mode      = 3,
+}
+THERMO_SENSOR_PORT  : 28805
+THERMO_STATUS_PORT  : 0010 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0

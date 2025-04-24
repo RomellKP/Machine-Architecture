@@ -1,0 +1,45 @@
+{
+    THERMO_STATUS_PORT  = 0b00000000; // bit 5 is 0, Celsius
+    THERMO_DISPLAY_PORT = -1;
+    // Checks several rounding cases
+    THERMO_SENSOR_PORT  = 47;         // rem 15, round down
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+}
+TEST OUTPUT:
+ret: 0
+temp = {
+  .tenths_degrees = -449,
+  .temp_mode      = 1,
+}
+{
+    // Checks several rounding cases
+    THERMO_STATUS_PORT  = 0b00000000; // bit 5 is 0, Celsius
+    THERMO_DISPLAY_PORT = -1;
+    THERMO_SENSOR_PORT  = 48;         // rem 16, round up
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+}
+TEST OUTPUT:
+ret: 0
+temp = {
+  .tenths_degrees = -448,
+  .temp_mode      = 1,
+}
+{
+    // Checks several rounding cases
+    THERMO_STATUS_PORT  = 0b00000000; // bit 5 is 0, Celsius
+    THERMO_DISPLAY_PORT = -1;
+    THERMO_SENSOR_PORT  = 90;         // rem 26, round up
+    ret = set_temp_from_ports(temp);
+    printf("ret: %d\n",ret);
+    print_temp( temp );
+}
+TEST OUTPUT:
+ret: 0
+temp = {
+  .tenths_degrees = -447,
+  .temp_mode      = 1,
+}

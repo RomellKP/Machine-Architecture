@@ -1,0 +1,88 @@
+{
+    // Runs thermo_update() on min sensor value.
+    THERMO_SENSOR_PORT  = (-78+450)*32 + 7;
+    THERMO_STATUS_PORT  = 0b00000000; // celsius
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 0
+THERMO_SENSOR_PORT  : 11911
+THERMO_STATUS_PORT  : 0000 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 01 0000000 0000100 1001001 1111111
+index               : 30 28      21      14       7       0
+           ~~   ~~   
+             | |  | o
+      ~~        ~~   C
+             | |  |  
+              o ~~   
+{
+    // Runs thermo_update() on min sensor value.
+    THERMO_SENSOR_PORT  = (-78+450)*32 + 7;
+    THERMO_STATUS_PORT  = 0b00100000; // fahrenheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 0
+THERMO_SENSOR_PORT  : 11911
+THERMO_STATUS_PORT  : 0010 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 10 0000000 1001000 1111111 1111011
+index               : 30 28      21      14       7       0
+           ~~   ~~   
+        | |  | |  |  
+           ~~       o
+        | |  | |  |  F
+           ~~ o ~~   
+{
+    // Runs thermo_update() on min sensor value.
+    THERMO_SENSOR_PORT  = (-356+450)*32 + 13;
+    THERMO_STATUS_PORT  = 0b00000000; // celsius
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 0
+THERMO_SENSOR_PORT  : 3021
+THERMO_STATUS_PORT  : 0000 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 01 0000100 1101101 1100111 1110111
+index               : 30 28      21      14       7       0
+      ~~   ~~   ~~   
+        | |    |    o
+ ~~   ~~   ~~   ~~   C
+        |    | |  |  
+      ~~   ~~ o ~~   
+{
+    // Runs thermo_update() on min sensor value.
+    THERMO_SENSOR_PORT  = (-356+450)*32 + 13;
+    THERMO_STATUS_PORT  = 0b00100000; // fahrenheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 0
+THERMO_SENSOR_PORT  : 3021
+THERMO_STATUS_PORT  : 0010 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 10 0000100 1101101 0111101 1111011
+index               : 30 28      21      14       7       0
+      ~~   ~~   ~~   
+        |    | |  |  
+ ~~   ~~   ~~       o
+        | |    |  |  F
+      ~~   ~~ o ~~   

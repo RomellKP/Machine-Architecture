@@ -1,0 +1,32 @@
+{
+    // Checks if the negative sign aligns correctly to the
+    // left middle digit for single digit temperatures.
+    temp->tenths_degrees = -90;
+    temp->temp_mode      = 2;         // fahrenheit
+    THERMO_SENSOR_PORT  = 128;        // ports should be ignored
+    THERMO_STATUS_PORT  = 0b11111111;
+    THERMO_DISPLAY_PORT = -1;
+    ret = set_display_from_temp(*temp, dispint);
+    printf("ret: %d\n",ret);
+    printf("%-19s : %s\n", "dispint",bitstr(*dispint,&dispspec));
+    printf("%-19s : %s\n", "index",bitstr_index(&dispspec));
+    print_ports();
+    printf("SIMULATED DISPLAY:\n");
+    THERMO_DISPLAY_PORT = *dispint;
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 0
+dispint             : 00 10 0000000 0000100 1101111 1111011
+index               : 30 28      21      14       7       0
+THERMO_SENSOR_PORT  : 128
+THERMO_STATUS_PORT  : 1111 1111
+index               :    4    0
+THERMO_DISPLAY_PORT : 11 11 1111111 1111111 1111111 1111111
+index               : 30 28      21      14       7       0
+SIMULATED DISPLAY:
+           ~~   ~~   
+          |  | |  |  
+      ~~   ~~       o
+             | |  |  F
+           ~~ o ~~   

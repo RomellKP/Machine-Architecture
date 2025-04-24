@@ -1,0 +1,46 @@
+{
+    // Checks that sensor values out of range are handled
+    // correctly and display ERR
+    THERMO_SENSOR_PORT  = 901*32;
+    THERMO_STATUS_PORT  = 0b00100000; // fahrenheit
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 1
+THERMO_SENSOR_PORT  : 28832
+THERMO_STATUS_PORT  : 0010 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 00 0110111 1011111 1011111 0000000
+index               : 30 28      21      14       7       0
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      
+{
+    // Checks that sensor values out of range are handled
+    // correctly and display ERR
+    THERMO_SENSOR_PORT  = -17;
+    THERMO_STATUS_PORT  = 0b00000000; // celsius
+    THERMO_DISPLAY_PORT = -1;
+    ret = thermo_update();
+    printf("ret: %d\n",ret);
+    print_ports();
+    print_thermo_display();
+}
+TEST OUTPUT:
+ret: 1
+THERMO_SENSOR_PORT  : -17
+THERMO_STATUS_PORT  : 0000 0000
+index               :    4    0
+THERMO_DISPLAY_PORT : 00 00 0110111 1011111 1011111 0000000
+index               : 30 28      21      14       7       0
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~   ~~   ~~        
+|    |  | |  |       
+ ~~           o      

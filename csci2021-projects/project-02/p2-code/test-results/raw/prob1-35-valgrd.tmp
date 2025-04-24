@@ -1,0 +1,15 @@
+==2102104== Memcheck, a memory error detector
+==2102104== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2102104== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2102104== Command: ./thermo_main -600 F
+==2102104== Parent PID: 2102103
+==2102104== 
+==2102104== 
+==2102104== HEAP SUMMARY:
+==2102104==     in use at exit: 0 bytes in 0 blocks
+==2102104==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==2102104== 
+==2102104== All heap blocks were freed -- no leaks are possible
+==2102104== 
+==2102104== For lists of detected and suppressed errors, rerun with: -s
+==2102104== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
