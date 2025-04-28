@@ -31,11 +31,19 @@ Project 4:
   files. implemented the following funtions: vector_init, matrix_init, vector_free_data, matrix_free_data, vector_read_from_file, matrix_read_from_file,
   vector_write, matrix_write, vector_fill_sequential, and matrix_fill_sequential.
 
-  Run and Compile: For search algorithms problem compile and run search_benchmark.c and for matrices and vectors problem compile and run matata_print.c and matata_benchmark.c. From there, follow 
-  directions in terminal and type out commands.
+  Run and Compile: For search algorithms problem compile and run search_benchmark.c and for matrices and vectors problem compile and run matata_print.c and matata_benchmark.c. 
+  From there, follow directions in terminal and type out commands.
 
   My Contributions: matvec_util.c and search_funcs.c
 
 Project 5:
 
-  Description:
+  Description:Implemented an explicit list memory allocator. Provides a malloc/free memory manager and uses an explicit free list to manage available 
+  memory blocks. Allocator supports splitting and merging of memory blocks for efficient heap utilization. Implemented the following functions: el_init,
+  el_cleanup, el_get_footer, el_get_header, el_block_above, el_block_below, el_print_blocklist, el_print_block, el_print_stats, el_init_blobklist, 
+  el_add_block_font, el_remove_back, el_find_first_avail, el_split_block, el_malloc, el_merge_block_with_above, el_free, and el_append_pages_to_heap.
+  
+
+  Run and Compile: Run and compile test_el_malloc.c
+
+  My Contributions: el_malloc.c
