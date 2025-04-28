@@ -12,7 +12,7 @@ Project 1:
 
   My Contributions: hashmap_funcs.c, stock_funcs.c
 
-Project 2:
+Project 3:
 
   Description:Implemented a thermo display controller that reads temperature sensor data and updates a digital display. Optimized for embedded
   systems as it uses minimal CPU and memory footprint. This is achieved through integer operations no dynamic memory allocation. Implemented the
@@ -22,13 +22,19 @@ Project 2:
 
   My Contributions: thermo_update.c
 
-Project 3:
-
-  Description:
-
 Project 4:
 
-  Description:
+  Description:Two seprate implementations: search algorithms and matrices and vectors. The first implements multiple search algorithms including
+  arrays, linked lists, and binary search trees. Implemented the following functions: linear_array_search, linked_list_search, bineary_array_search, 
+  binary_tree_search, make_evens_array, make_evens_list, make_evens_tree, tree_merge, list_free, bst_free, and node_remove_all. The second provides 
+  utilities for working with matrices and vectors. It includes memory allocating, performing basic operations on them, amd reading/writing them from/to
+  files. implemented the following funtions: vector_init, matrix_init, vector_free_data, matrix_free_data, vector_read_from_file, matrix_read_from_file,
+  vector_write, matrix_write, vector_fill_sequential, and matrix_fill_sequential.
+
+  Run and Compile: For search algorithms problem compile and run search_benchmark.c and for matrices and vectors problem compile and run matata_print.c and matata_benchmark.c. From there, follow 
+  directions in terminal and type out commands.
+
+  My Contributions: matvec_util.c and search_funcs.c
 
 Project 5:
 
