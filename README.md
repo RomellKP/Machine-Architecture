@@ -14,7 +14,13 @@ Project 1:
 
 Project 2:
 
-  Description:
+  Description:Implemented a thermo display controller that reads temperature sensor data and updates a digital display. Optimized for embedded
+  systems as it uses minimal CPU and memory footprint. This is achieved through integer operations no dynamic memory allocation. Implemented the
+  following funtions: thermo_update, set_temp_from_ports, and set_display_from_temp.
+
+  Run and Compile: Run and compile thermo_main.c. From there, follow directions in terminal and type out commands.
+
+  My Contributions: thermo_update.c
 
 Project 3:
 
