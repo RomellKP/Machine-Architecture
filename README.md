@@ -42,7 +42,15 @@ Project 5:
   memory blocks. Allocator supports splitting and merging of memory blocks for efficient heap utilization. Implemented the following functions: el_init,
   el_cleanup, el_get_footer, el_get_header, el_block_above, el_block_below, el_print_blocklist, el_print_block, el_print_stats, el_init_blobklist, 
   el_add_block_font, el_remove_back, el_find_first_avail, el_split_block, el_malloc, el_merge_block_with_above, el_free, and el_append_pages_to_heap.
-  
+
++--------------------+  
+| el_blockhead_t     |  (contains size, state, prev, next)
++--------------------+
+| User Data Area     |
+|  ...               |
++--------------------+
+| el_blockfoot_t     |  (contains size)
++--------------------+  
 
   Run and Compile: Run and compile test_el_malloc.c
 
