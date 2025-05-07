@@ -1,5 +1,7 @@
 # Projects for Machine Architecture:
 
+---
+
 ## Project 1: 
 
   ### Description: 
