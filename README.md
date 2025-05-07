@@ -42,8 +42,9 @@
   vector_write, matrix_write, vector_fill_sequential, and matrix_fill_sequential.
 
   ### How to Run: 
-  For search algorithms problem compile and run search_benchmark.c and for matrices and vectors problem compile and run matata_print.c and matata_benchmark.c. 
-  From there, follow directions in terminal and type out commands.
+  1. For search algorithms problem compile and run search_benchmark.c
+  2. For matrices and vectors problem compile and run matata_print.c and matata_benchmark.c
+  3. Follow directions in terminal and type out commands
 
   ### My Contributions: 
   - matvec_util.c
@@ -58,7 +59,7 @@
   el_add_block_font, el_remove_back, el_find_first_avail, el_split_block, el_malloc, el_merge_block_with_above, el_free, and el_append_pages_to_heap.
 
   ### How to Run: 
-  - Run and compile test_el_malloc.c
+  1. Run and compile test_el_malloc.c
 
   ### My Contributions: 
   - el_malloc.c
